@@ -23,8 +23,28 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'experimentum' ); ?></a>
+	<?php if ( get_header_image() ) { ?>
+		<header id="masthead" class="site-header" style="background-image:url(<?php header_image(); ?>)" role="banner">
+	<?php } else { ?>
+		<header id="masthead" class="site-header" role="banner">
+	<?php } ?>
+	
 
-	<header id="masthead" class="site-header" role="banner">
+		<?php // Display site icon or first letter as logo ?>	
+		<div class="site-logo">
+			<?php $site_title = get_bloginfo( 'name' ); ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<div class="screen-reader-text">
+					<?php printf( esc_html__('Go to the home page of %1$s', 'popperscores'), $site_title ); ?>	
+				</div>
+				<div class="site-firstletter" aria-hidden="true">
+					<?php echo substr($site_title, 0, 1); ?>
+				</div>
+			</a>
+		</div>
+
+
+
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>

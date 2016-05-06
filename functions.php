@@ -120,6 +120,8 @@ function experimentum_scripts() {
 	//Google fonts open-sans and cinzel
 	 wp_enqueue_style('experimentum-google-fonts','https://fonts.googleapis.com/css?family=Open+Sans|Cinzel:400,700');
 
+	 wp_enqueue_style('experimentum-fontawesome',"https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css");
+
 	
 
 	wp_enqueue_script( 'experimentum-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );

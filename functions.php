@@ -45,6 +45,7 @@ function experimentum_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'experimentum' ),
+		'secondary' => esc_html__( 'Secondary', 'experimentum' ),
 	) );
 
 	/*
@@ -117,7 +118,7 @@ function experimentum_scripts() {
 	wp_enqueue_style( 'experimentum-style', get_stylesheet_uri() );
 
 	//Google fonts open-sans and cinzel
-	 wp_enqueue_style('experimentum-google-fonts','https://fonts.googleapis.com/css?family=Open+Sans|Cinzel');
+	 wp_enqueue_style('experimentum-google-fonts','https://fonts.googleapis.com/css?family=Open+Sans|Cinzel:400,700');
 
 	
 

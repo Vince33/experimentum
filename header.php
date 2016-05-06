@@ -21,13 +21,17 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'experimentum' ); ?></a>
+
 	<?php if ( get_header_image() ) { ?>
 		<header id="masthead" class="site-header" style="background-image:url(<?php header_image(); ?>)" role="banner">
 	<?php } else { ?>
 		<header id="masthead" class="site-header" role="banner">
 	<?php } ?>
+
+		
 	
 
 		<?php // Display site icon or first letter as logo ?>	
@@ -45,7 +49,7 @@
 
 
 
-		<div class="site-branding">
+		<div class="site-branding <?php if( !is_front_page() ){ echo ' screen-reader-text';} ?>">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -63,8 +67,17 @@
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'experimentum' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<?php wp_nav_menu( array(
+
+					 'theme_location' => 'primary',
+					 'menu_id' => 'primary-menu',
+					 'menu_class'     => 'nav-menu'
+
+				) ); 
+			?>
 		</nav><!-- #site-navigation -->
+
+		
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

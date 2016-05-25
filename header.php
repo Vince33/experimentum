@@ -24,9 +24,10 @@
 
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'experimentum' ); ?></a>
-
-	<?php if ( get_header_image() ) { ?>
+	
+	<?php if ( get_header_image() && !is_page_template() ) { ?>
 		<header id="masthead" class="site-header" style="background-image:url(<?php header_image(); ?>)" role="banner">
+		<?php echo is_page_template('page.php'); ?>
 	<?php } else { ?>
 		<header id="masthead" class="site-header" role="banner">
 	<?php } ?>
@@ -41,9 +42,13 @@
 				<div class="screen-reader-text">
 					<?php printf( esc_html__('Go to the home page of %1$s', 'popperscores'), $site_title ); ?>	
 				</div>
+				<?php if (has_custom_logo()) {
+					the_custom_logo();
+				} else { ?>
 				<div class="site-firstletter" aria-hidden="true">
 					<?php echo substr($site_title, 0, 1); ?>
 				</div>
+				<?php }  ?>
 			</a>
 		</div>
 
@@ -66,7 +71,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'experimentum' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'experimentum' ); ?></button>
 			<?php wp_nav_menu( array(
 
 					 'theme_location' => 'primary',

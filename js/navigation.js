@@ -31,7 +31,7 @@
 	}
 
 	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+		if ( -1 !== container.className.indexOf( ' toggled' ) ) {
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
@@ -110,5 +110,40 @@
 			});
 		}
 	});
+
+
+	//Hide/show toggle button on scroll
+
+
+	var position,direction, previous ;
+
+	$(window).scroll(function(){
+		if ($(this).scrollTop() >= position ){
+		direction = 'down';
+
+		if ( direction !== previous ) {
+			$('.menu-toggle').addClass('hide');
+
+
+			previous = direction;
+		}
+	} else {
+		direction = 'up';
+		if (direction !== previous) {
+			$('.menu-toggle').removeClass('hide');
+
+			previous = direction;
+		}
+	}
+
+	position = $(this).scrollTop();
+	
+	});
+
+
+
+
+
+
 
 } )(jQuery);

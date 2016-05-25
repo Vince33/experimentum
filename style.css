@@ -443,24 +443,25 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
+	border-color: #fff;
 	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
+	background: #000;
+	/*box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);*/
+	color: #fff;
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
 	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	/*text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);*/
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	border-color: #000;
+	color:#fff;
+	/*box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), in*/set 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 
 button:focus,
@@ -471,8 +472,10 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+	/*background-color:#000;*/
+	border-color: #000;
+	color:#fff;
+
 }
 
 input[type="text"],
@@ -554,113 +557,7 @@ textarea {
 
 
 
-/*.primary-menu {
-  display:flex;
-  background:hsl(0,0%,15%);
-  flex-wrap:wrap;
-  justify-content:space-between;
-}
 
-.main-navigation{
-	background:grey;
-}
-
-.menu a {
-	color:white;
-	text-decoration: none;
-	display:block;
-	padding: .6em 1em;
-}
-
-.menu li a:hover {
-  background: hsl(0,0%,25%);
-}
-
-
-@media screen and (min-width:30em){
-  .main-navigation ul {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-  }*/
-
-/*---
-experiment
------*/
-/*@media screen and (max-width: 30em) {
-  .main-navigation ul ul li a {
-    padding-left:2em;
-  }
-  
-  .dropdown-toggle {
-    display:none;
-  }
-}
-
-@media screen and (min-width:30em){
-  .main-navigation ul {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-  }
-  
-  .main-navigation li{
-    flex: 1 0 auto;
-    position:relative;
-  }
-  
-  li.has-children > a {
-    padding-right:0;
-  }
-  
-  .main-navigation ul ul {
-    display:none;
-    position:absolute;
-    z-index:1000;
-  }
-  
-  .main-navigation ul ul li {
-    flex: 1 1 auto;
-  }
-  
-  
-  
-  .main-navigation ul .toggled-on {
-		display: flex;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    background: hsl(0, 0%, 25%);
-	}
-  
-  .dropdown-toggle {
-    margin:0;
-    padding:0 .5em;
-    border: 0;
-    font-family:'FontAwesome';
-    content:"";
-    text-transform:lowercase;
-    background-color:transparent;
-  }
-  
-  .dropdown-toggle:after {
-    position:relative;
-    top:0;
-    left:0;
-    width:42px;
-    color:white;
-    content: "\f107";
-    line-height:1em;
-  }
-  
-  .dropdown-toggle:hover,
-	.dropdown-toggle:focus {
-		background: hsl(0, 0%, 25%);
-	}
-  
-  .dropdown-toggle.toggle-on:after {
-		content: "\f106";
-	}
-}*/
 
 
 
@@ -695,47 +592,52 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	font-family: 'Cinzel', serif;
 	clear: both;
 	display: block;
-	float: left;
 	width: 100%;
+	font-family: 'Cinzel', serif;
+	font-weight: 300;
+	font-size: 1em;
 }
-
-.main-navigation a:hover,
- .main-navigation a:focus {
- 	background: #fff;
- 	color: #000;
-  }
 
 .main-navigation ul {
 	display: none;
 	list-style: none;
-	margin: 0;
-	padding-left: 0;
+	margin-left: 0;
 }
 
-.main-navigation a {
-	display: block;
-	padding: 0.8em 0;
+.main-navigation li {
 	position: relative;
-	text-decoration: none;
-}
-
-.main-navigation .current-menu-ancestor > a,
-.main-navigation .current_page_item > a,
-.main-navigation .current_page_ancestor > a {
-  	font-weight:700;
-  }
-
-.main-navigation ul {
-	list-style: none;
-	margin: 0;
 }
 
 .main-navigation ul ul {
 	display: none;
 	margin-left: 0.8em;
+}
+
+.main-navigation a {
+	position: relative;
+	display: block;
+	padding: 0.8em 1em;
+	font-weight: 400;
+	text-decoration: none;
+	line-height: 1.6em;
+	color: white;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+	background: #fff;
+	color: #000;
+}
+
+.main-navigation a,
+.main-navigation ul ul li:lastchild a {
+	border-bottom: 1px solid white;
+}
+
+.main-navigation ul li:last-child a {
+	border-bottom: none;
 }
 
 .main-navigation ul .toggled-on {
@@ -749,7 +651,9 @@ a:active {
 }
 
 .main-navigation .current-menu-item > a,
-.main-navigation .current-menu-ancestor > a {
+.main-navigation .current-menu-ancestor > a,
+.main-navigation .current_page_item > a,
+.main-navigation .current_page_ancestor > a {
 	font-weight: 700;
 }
 
@@ -758,19 +662,9 @@ a:active {
 	border-top: 0;
 }
 
-.main-navigation .menu-item-has-children > a {
+.main-navigation .menu-item-has-children > a,
+.main-navigation .page_item_has_children > a{
 	padding-right: 48px;
-}
-
-.main-navigation .menu-item-description {
-	color: #707070;
-	color: rgba(51, 51, 51, 0.7);
-	font-family: "Noto Sans", sans-serif;
-	font-size: 12px;
-	font-size: 1.2rem;
-	font-weight: 400;
-	line-height: 1.5;
-	margin-top: 0.5em;
 }
 
 .no-js .main-navigation ul ul {
@@ -778,49 +672,79 @@ a:active {
 }
 
 .dropdown-toggle {
-	background-color: transparent;
-	border: 0;
+	position: absolute;
+	height: 27px;
+	width: 27px;
+	top: 12px;
+	right: 6px;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
-	content: "";
-	height: 42px;
 	padding: 0;
-	position: absolute;
-	text-transform: lowercase; /* Stop screen readers to read the text as capital letters */
-	top: 3px;
-	right: 0;
-	width: 42px;
+	font-family: 'FontAwesome';
+	background-color: #000;
+	border: 1px solid #fff;
+	content: "";
+	color: #fff;
+	text-transform: lowercase; /* Stop screen readers from reading the text as capital letters */
 }
 
 .dropdown-toggle:after {
-	color: #333;
-	content: "\f431";
-	font-size: 24px;
-	line-height: 42px;
+	content: "\f078";
+	font-size: 14px;
+	line-height: 27px;
 	position: relative;
 	top: 0;
 	left: 1px;
-	width: 42px;
+	width: 27px;
 }
 
 .dropdown-toggle:hover,
 .dropdown-toggle:focus {
-	background-color: #eaeaea;
-	background-color: rgba(51, 51, 51, 0.1);
-}
-
-.dropdown-toggle:focus {
-	outline: 1px solid #c1c1c1;
-	outline: 1px solid rgba(51, 51, 51, 0.3);
+	background-color: #fff;
+	color: #000;
 }
 
 .dropdown-toggle.toggle-on:after {
-	content: "\f432";
+	content: "\f077";
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+.menu-toggle {
+	position: fixed;
+	z-index: 100;
+	bottom: 1em;
+	left: 1em;
+	font-size: 1em;
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	border: solid 2px #fff;
+	transition: all ease-out 400ms;
+}
+
+.menu-toggle.hide {
+	bottom: -2.5em;
+}
+
+/* Make sure the button doesn't hide when menu is open. */
+
+.toggled .menu-toggle.hide {
+	bottom: 1em;
 }
 
 
-@media screen and (min-width: 37.5em) {
+.menu-toggle:hover,
+.menu-toggle:focus {
+	/*text-decoration: underline;*/
+}
+
+@media screen and (min-width: 50em) {
 	.menu-toggle {
 		display: none;
 	}
@@ -829,28 +753,137 @@ a:active {
 	}
 }
 
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
+/* Hovering menu */
+
+.main-navigation.toggled {
+	position: fixed;
+	bottom: 0;
+	padding: 1em;
+	z-index: 1;
 }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+.nav-menu {
+	padding: 1em;
+	margin-bottom: 3em;
+	background-color: #000;
 }
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+.main-navigation.toggled ul {
+	max-height: calc(100vh - 8em);
+	overflow-y: auto;
 }
 
+.main-navigation.toggled ul ul {
+	display: none;
+}
+
+.main-navigation.toggled ul ul.toggled-on,
+.main-navigation.toggled ul ul.toggled-on > ul {
+	display: block;
+}
+
+/* Horizontal menu on wide screens */
+@media screen and (min-width: 50em) {
+	
+	/* Position the menu in the header */
+	.main-navigation,
+	.main-navigation.toggled {
+		position: relative;
+		min-height: 3.5em;
+		max-width: 58em;
+		margin: 0 auto;
+		padding: 0 3.5em;
+		background-color: #000;
+		background-color: hsla(0, 0%, 0%, .7);
+	}
+	
+	.nav-menu {
+		padding: .3em 0 0 0;
+		background-color: transparent;
+	}
+	
+	.main-navigation ul,
+	.main-navigation.toggled ul {
+		max-height: none;
+		padding-left: 0;
+		text-align: center;
+	}
+	
+	.main-navigation.toggled ul {
+		overflow-y: visible;
+	}
+	
+	/* Display the menu items in a horizontal order */
+	.main-navigation li {
+		display: inline-block;
+		border: none;
+	}
+	
+	/* Add an outline to the drop-down menus */
+	.main-navigation ul ul {
+		outline: 1px solid #333;
+	}
+	
+	/* Left-align drop-down menu items */
+	.main-navigation li li {
+		display: block;
+		text-align: left;
+	}
+	
+	.main-navigation a,
+	.main-navigation ul ul li:last-child a {
+		border-bottom: none;
+	}
+	
+	/* Add an outline on hovered and focused menu items */
+	.main-navigation a:hover,
+	.main-navigation a:focus {
+		background: transparent;
+		color: #fff;
+		text-decoration: underline;
+		outline: solid 1px #b3b3b3;
+	}
+	
+	/* Create hover and focus contrast on drop-down items */
+	.main-navigation li li a:hover,
+	.main-navigation li li a:focus {
+		background: #eee;
+		color: #000;
+		text-decoration: none;
+	}
+	
+	/* Position drop-down menus absolutely */
+	.main-navigation ul ul.toggled-on {
+		position: absolute;
+		width: 12em;
+		display: block;
+		z-index: 10;
+		margin-left: 0;
+		background: #000;
+	}
+	
+	.main-navigation ul ul ul.toggled-on {
+		position: relative;
+	}
+	
+	/* Indent 3rd level drop-down menus */
+	.main-navigation ul ul ul a {
+		padding-left: 2em;
+	}
+	
+	/* Simplify the drop-down toggle */
+	.dropdown-toggle {
+		top: 11px;
+		right: 12px;
+		border: none;
+	}
+	
+	.dropdown-toggle::after {
+		line-height: 27px;
+		width: 27px;
+	}
+	
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/

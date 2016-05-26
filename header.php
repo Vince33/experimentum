@@ -54,7 +54,7 @@
 
 
 
-		<div class="site-branding <?php if( !is_front_page() ){ echo ' screen-reader-text';} ?>">
+		<div class="site-branding <?php if( is_singular() ){ echo ' screen-reader-text';} ?>">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

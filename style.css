@@ -1140,6 +1140,18 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+.deck {
+	margin-bottom: 2.5em;
+}
+
+.deck p {
+	text-align:center;
+	font-size:1.2em;
+	line-height:1.5em;
+	font-weight:600;
+}
+
+
 .entry-meta {
 	margin:0 -1.47368421052632em;
 	/*padding:2em -1.47368421052632em;*/
